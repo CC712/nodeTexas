@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Texas</title>
+	</head>
+	<link rel="stylesheet" href="client/css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="client/css/poker.css" />
+	<style type="text/css">
+
+	</style>
+
+	<body>
+		<div class="back">
+			返回
+		</div>
+		<div class="login">
+			<p>
+				<label for="l_uid">账号</label><input type="tel" name="uid" id="l_uid" value="" />
+			</p>
+			<p>
+				<label for="l_pwd">密码</label><input type="password" name="pwd" id="l_pwd" value="" />
+			</p>
+			<p>
+				<label for=""></label><button type="submit">提交登录</button>
+				<button id='login_signUp'>注册账号</button>
+			</p>
+		</div>
+		<div class="signUp">
+			<p>
+				<label for="s_uid">账号</label><input type="tel" name="uid" id="s_uid" value="" placeholder="纯数字6 - 12位"/>
+			</p>
+			<p>
+				<label for="s_pwd">密码</label><input type="password" name="pwd" id="s_pwd" value=""placeholder="字母数字6 - 12位" />
+			</p>
+			<p>
+				<label for="s_pwd_2">确认密码</label><input type="password" name="pwd2" id="s_pwd2" value="" placeholder="再次输入密码"/>
+			</p>
+			<p>
+				<label for=""></label><button id="signUp_regist">提交注册</button>
+			</p>
+		</div>
+		<div class="hall">
+			<h2>大厅</h2>
+			<ul class="hall-list">
+			</ul>
+		</div>
+		<div class="stage">
+			<div class='stage-wrap'>
+				<div class="stage-banker">
+
+				</div>
+				<div class="stage-table">
+
+				</div>
+				<div class='stage-players'>
+
+				</div>
+				<div class="stage-askBlock">
+					<div class="stage-askMsg">
+						<p>提示</p>
+					</div>
+					<div class="stage-select">
+						<button data-btn='follow' class="stage-btn stage-btn_follow">跟</button>
+						<button data-btn='add' class="stage-btn stage-btn_add">加注</button>
+						<button data-btn='allin' class="stage-btn stage-btn_allin">allin</button>
+						<button data-btn='fold' class="stage-btn stage-btn_fold">盖牌</button>
+					</div>
+				</div>
+				<button class="stage-startBtn">加入游戏</button>
+
+			</div>
+
+		</div>
+
+	</body>
+	<script>
+		var $ = r => document.querySelector(r)
+	</script>
+	<script src="./client/dist/bundle.js" type="text/javascript">
+	</script>
+
+</html>

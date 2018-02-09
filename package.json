@@ -1,0 +1,22 @@
+{
+  "name": "node-texas",
+  "version": "1.0.0",
+  "description": "game",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack -w",
+    "gogo": "sh goServer.sh",
+    "build": "babel src -d lib"
+  },
+  "author": "CC712",
+  "license": "ISC",
+  "dependencies": {
+    "webpack": "^3.10.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "uglifyjs-webpack-plugin": "^1.1.8"
+  }
+}
