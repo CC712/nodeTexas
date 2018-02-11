@@ -5,11 +5,14 @@ const cookieParser = require('cookie-parser')
 const tools = require('../util/tools')
 //api 分发
 const API_V1 = require('./api/api_v1')
+const demo_handler = require('./demo_handler')
 //make db 
 var db = require('./db')
 db.createDB()
 const app = express()
-
+//demo
+app.use(express.static('../demo'))
+app.use('/demo', demo_handler)
 //middlewares
 app.use(cookieParser())
 app.use(bodyParser.json())
@@ -17,6 +20,7 @@ app.use(bodyParser.urlencoded({extended : true}))
 
 //static resource 就是静态的文件，请求html的时候直接是一个全是文本 不是页面
 app.use(express.static('../static'))
+
 //跨域
 app.all('*', function(req, res, next) {
   //log req header
@@ -40,7 +44,6 @@ app.all('*', function(req, res, next) {
 
 //api
 app.use('/api/v1/', API_V1())
-// jwt 判断是否自动登录
 
 //test
 app.use('/', function(req, res, next) {
@@ -53,4 +56,4 @@ app.use(function(req, res, next) {
   res.status(404).end('404 NOT FOUND');
   //res.send();
 });
-app.listen(8080)
+app.listen(8000)
