@@ -1,4 +1,4 @@
-const db = global.resolvePath('server/db.js')
+const db = global.resolvePath('db.js')
 const Player = require('./logic/js/player')
 const Poker = require('./logic/js/poker')
 const scene = require('./logic/js/scene')
