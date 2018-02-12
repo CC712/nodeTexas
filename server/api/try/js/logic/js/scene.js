@@ -1,4 +1,4 @@
-const db = global.resolvePath('server/db.js')
+const db = global.resolvePath('db.js')
 
 function switchScene(s, that) {
   console.log('state change from ', that.state, 'to', s)
