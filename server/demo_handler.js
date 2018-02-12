@@ -6,7 +6,7 @@ const fs = require('fs')
 const router = express.Router()
 // /?id = 0 
 var config = {
-  dir: path.join(__dirname, '../demo')
+  dir: path.join(__dirname, '../../test')
 }
 
 router.get('/', (req, res, next) => {

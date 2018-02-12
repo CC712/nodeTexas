@@ -86,7 +86,7 @@ Game.prototype.backToLast = function() {
 }
 var _game = new Game()
 
-var __host = `//localhost:8080`
+var __host = `//localhost:8000`
 var isLogin = false
 //
 //var autoLogin = function() {

@@ -5,7 +5,7 @@ import Control from '../js/controllor'
 //params
 import Model from '../js/texas'
 import Control from '../js/controllor'
-var __host = `//localhost:8080`
+var __host = `//localhost:8000`
 var isLogin = false
 var $ = (f, s = document) => s.querySelector(f)
 var sceneCache = {}
@@ -212,7 +212,7 @@ var s_hall = new Scene({
 //					<p class="hall-state">游戏中</p>
 
     ajax({
-        url: '//localhost:8080/api/v1/room/'
+        url: __host + '/api/v1/room/'
       })
       .then(r => {
         if(r.data) {
