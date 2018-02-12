@@ -32356,3 +32356,24 @@ Time: 7865ms
 bundle.js  14.6 kB       0  [emitted]  index
    [7] ./static/client/scene_view/all.js 6.79 kB {0} [built]
     + 12 hidden modules
+
+Webpack is watching the files…
+
+Hash: c8a81d2c54472c8cdd32
+Version: webpack 3.10.0
+Time: 1148ms
+    Asset     Size  Chunks             Chunk Names
+bundle.js  42.3 kB       0  [emitted]  index
+   [0] ./static/ajax.js 1.56 kB {0} [built]
+   [1] ./static/client/msgCenter.js 498 bytes {0} [built]
+   [2] ./static/client/js/texas.js 1.51 kB {0} [built]
+   [3] ./static/client/js/poker.js 781 bytes {0} [built]
+   [4] ./static/client/js/10ChangeAlgorithem.js 958 bytes {0} [built]
+   [5] ./static/client/js/controllor.js 4 kB {0} [built]
+   [6] ./static/client/main.js 2.71 kB {0} [built]
+   [7] ./static/client/scene_view/all.js 6.78 kB {0} [built]
+   [8] ./static/client/js/player.js 748 bytes {0} [built]
+   [9] ./static/client/js/valid.js 5.03 kB {0} [built]
+  [10] ./static/client/js/testHands.js 574 bytes {0} [built]
+  [11] ./static/client/js/scene.js 3.03 kB {0} [built]
+  [12] ./static/client/js/view.js 7.33 kB {0} [built]

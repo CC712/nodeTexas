@@ -11,7 +11,7 @@ var db = require('./db')
 db.createDB()
 const app = express()
 //demo
-app.use(express.static('../demo'))
+//app.use(express.static('../../demo'))
 app.use('/demo', demo_handler)
 //middlewares
 app.use(cookieParser())
@@ -19,7 +19,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended : true}))
 
 //static resource 就是静态的文件，请求html的时候直接是一个全是文本 不是页面
-app.use(express.static('../static'))
+app.use(express.static(path.resolve(__dirname, '../static')))
 
 //跨域
 app.all('*', function(req, res, next) {
