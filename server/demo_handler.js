@@ -21,13 +21,14 @@ router.get('/', (req, res, next) => {
     var entry = d_c.entry
     var entry_p = path.join(demo_path, entry)
     console.log(entry_p)
-    res.header('Content-Type', 'text/html;charset=utf-8')
-    res.sendFile(entry_p, (err) => {
-      if(err) {
-        res.sendStatus(500)
-        return
-      }
-    })
+    res.redirect(301, entry_p)
+//  res.header('Content-Type', 'text/html;charset=utf-8')
+//  res.sendFile(entry_p, (err) => {
+//    if(err) {
+//      res.sendStatus(500)
+//      return
+//    }
+//  })
 
   })
 })
