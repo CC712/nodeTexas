@@ -1,5 +1,6 @@
 import TexasView from './view'
 import ajax from '../../ajax'
+var __host = `//139.199.188.25:8080` 
 function Controllor(model) {
 
   this.model = model
@@ -8,7 +9,7 @@ function Controllor(model) {
 }
 Controllor.prototype.getData = function() {
   return ajax({
-    url: '//localhost:8080/api/v1/room/' + this.model.roomid
+    url:  __host +'/api/v1/room/' + this.model.roomid
   }).then(r => {
     //      console.log('polling data get!', r.data.model)
     if(!r.data){
@@ -143,7 +144,7 @@ Controllor.prototype.close = function() {
 Controllor.prototype.start = function() {
   if(this.model.state == 'start') {
     ajax({
-      url: '//localhost:8080/api/v1/room/' + this.roomid + '/start'
+      url:  __host +'/api/v1/room/' + this.roomid + '/start'
     }).then(r => {
       if(r.data)
         this.model.init(r.data.model)

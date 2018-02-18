@@ -334,6 +334,7 @@ function arange (arr=['A','B','C'],num=2){
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ajax__ = __webpack_require__(0);
 
 
+var __host = `//139.199.188.25:8080` 
 function Controllor(model) {
 
   this.model = model
@@ -342,7 +343,7 @@ function Controllor(model) {
 }
 Controllor.prototype.getData = function() {
   return Object(__WEBPACK_IMPORTED_MODULE_1__ajax__["a" /* default */])({
-    url: '//localhost:8080/api/v1/room/' + this.model.roomid
+    url:  __host +'/api/v1/room/' + this.model.roomid
   }).then(r => {
     //      console.log('polling data get!', r.data.model)
     if(!r.data){
@@ -477,7 +478,7 @@ Controllor.prototype.close = function() {
 Controllor.prototype.start = function() {
   if(this.model.state == 'start') {
     Object(__WEBPACK_IMPORTED_MODULE_1__ajax__["a" /* default */])({
-      url: '//localhost:8080/api/v1/room/' + this.roomid + '/start'
+      url:  __host +'/api/v1/room/' + this.roomid + '/start'
     }).then(r => {
       if(r.data)
         this.model.init(r.data.model)
@@ -588,7 +589,7 @@ Game.prototype.backToLast = function() {
 }
 var _game = new Game()
 
-var __host = `//localhost:8000`
+var __host = `//139.199.188.25:8000`
 var isLogin = false
 //
 //var autoLogin = function() {
