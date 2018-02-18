@@ -421,7 +421,7 @@ Controllor.prototype.startBtnHandler = function(uid) {
       return errEvents[errCode]()
     }
     Object(__WEBPACK_IMPORTED_MODULE_1__ajax__["a" /* default */])({
-      url: `//localhost:8080/api/v1/room/${this.model.roomid}/start`,
+      url:  __host  + `/api/v1/room/${this.model.roomid}/start`,
       method: 'post'
     }).then(r => {
         r.data && this.model.init(r.data)
@@ -431,7 +431,7 @@ Controllor.prototype.startBtnHandler = function(uid) {
   } else {
   	alert(`player ready => ${p.isReady}`)
     Object(__WEBPACK_IMPORTED_MODULE_1__ajax__["a" /* default */])({
-      url: `//localhost:8080/api/v1/room/${this.model.roomid}/player/${uid}/ready`,
+      url:  __host  + `/api/v1/room/${this.model.roomid}/player/${uid}/ready`,
       method: 'post'
     }).then(r => {
     	console.log(r)
@@ -447,7 +447,7 @@ Controllor.prototype.btnsHandler = function(e) {
   let target = e.target
   let method = target.getAttribute('data-btn')
   Object(__WEBPACK_IMPORTED_MODULE_1__ajax__["a" /* default */])({
-    url: `//localhost:8080/api/v1/room/${this.model.roomid}/player/${this.model._uid}/${method}`,
+    url:  __host  + `/api/v1/room/${this.model.roomid}/player/${this.model._uid}/${method}`,
     method: 'post'
   })
  	this.view.renderAsk(true)
@@ -455,7 +455,7 @@ Controllor.prototype.btnsHandler = function(e) {
 //handler
 Controllor.prototype.addPlayer = function(uid) {
   Object(__WEBPACK_IMPORTED_MODULE_1__ajax__["a" /* default */])({
-    url: `//localhost:8080/api/v1/room/${this.model.roomid}/player/${uid}`,
+    url:  __host  + `/api/v1/room/${this.model.roomid}/player/${uid}`,
     method: 'post'
   }).catch(err => {
     console.log('this is a err', err)
@@ -463,7 +463,7 @@ Controllor.prototype.addPlayer = function(uid) {
 }
 Controllor.prototype.delPlayer = function(uid) {
   Object(__WEBPACK_IMPORTED_MODULE_1__ajax__["a" /* default */])({
-    url: `//localhost:8080/api/v1/room/${this.model.roomid}/player/${uid}`,
+    url:  __host  + `/api/v1/room/${this.model.roomid}/player/${uid}`,
     method: 'delete'
   }).catch(err => {
     console.log('this is a err', err)
