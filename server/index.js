@@ -11,7 +11,7 @@ var db = require('./db')
 db.createDB()
 const app = express()
 //demo
-//app.use(express.static('../../demo'))
+app.use("/demo", express.static(path.resolve(__dirname, '../../demo')))
 app.use('/demo', demo_handler)
 //middlewares
 app.use(cookieParser())

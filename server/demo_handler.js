@@ -11,7 +11,7 @@ var config = {
 router.get('/', (req, res, next) => {
 	var id = req.query.id
 	if(id !== undefined)
-		res.redirect(301, path.resolve(__dirname, "demo/" + id))
+		res.redirect(301, "/demo/" + id)
 	next()
 })
 router.get('/:fid', (req, res, next) => {
