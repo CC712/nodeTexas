@@ -334,7 +334,7 @@ function arange (arr=['A','B','C'],num=2){
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ajax__ = __webpack_require__(0);
 
 
-var __host = `//139.199.188.25:8080` 
+var __host = `//139.199.188.25:8000` 
 function Controllor(model) {
 
   this.model = model
@@ -361,7 +361,7 @@ Controllor.prototype.valid = function(ip) {
     return
   }
   this.model.players.forEach(p => console.log(this.model.validHand(p)))
-}
+} 
 Controllor.prototype.init = function(data) {
   //this.model.init()
   if(!this.polling) {
