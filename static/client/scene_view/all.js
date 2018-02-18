@@ -5,7 +5,7 @@ import Control from '../js/controllor'
 //params
 import Model from '../js/texas'
 import Control from '../js/controllor'
-var __host = `//localhost:8000`
+var __host = `//139.199.188.25:8000` 
 var isLogin = false
 var $ = (f, s = document) => s.querySelector(f)
 var sceneCache = {}
