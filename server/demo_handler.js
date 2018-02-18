@@ -9,9 +9,13 @@ var config = {
   dir: path.join(__dirname, '../../demo')
 }
 
-router.get('/', (req, res, next) => {
+router.get('/:fid/', (req, res, next) => {
   var id = req.query.id
-  var demo_path = path.join(config.dir, `./${id}`)
+  var fid = req.params.fid
+  if(fid === undefined){
+ 		res.redirect(301, path.resolve(__dirname, "demo/"+fid))
+} else {
+	 var demo_path = path.join(config.dir, `./${fid}`)
   fs.readFile(demo_path + '/demo.config.json', 'utf-8', (err, fd) => {
     if(err) {
       res.status(404).end('NO THIS DEMO')
@@ -21,15 +25,16 @@ router.get('/', (req, res, next) => {
     var entry = d_c.entry
     var entry_p = path.join(demo_path, entry)
     console.log(entry_p)
-    res.redirect(301, entry_p)
-//  res.header('Content-Type', 'text/html;charset=utf-8')
-//  res.sendFile(entry_p, (err) => {
-//    if(err) {
-//      res.sendStatus(500)
-//      return
-//    }
-//  })
+    res.header('Content-Type', 'text/html;charset=utf-8')
+    res.sendFile(entry_p, (err) => {
+      if(err) {
+        res.sendStatus(500)
+        return
+      }
+    })
 
   })
+}
+  
 })
 module.exports = router
